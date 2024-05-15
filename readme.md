@@ -43,20 +43,20 @@ bash
 
     python app.py
 
-Usage
+## Usage
 
     Open your web browser and go to http://localhost:5000 to access the web application.
     Enter text in the input field and click "Analyze Sentiment" to see the sentiment analysis result.
     The result will display the input text, sentiment label (positive/negative/neutral), and confidence score.
 
-Technologies
+## Technologies
 
     Flask: Web framework for the backend server.
     Hugging Face Transformers: Library for utilizing pre-trained NLP models.
     HTML/CSS/JavaScript: Frontend interface for user interaction.
     Docker (optional): Containerization for deployment.
 
-Contributing
+## Contributing
 
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
