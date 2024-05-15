@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Web App</title>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form id="sentimentForm">
+        <label for="textInput">Enter Text:</label><br>
+        <textarea id="textInput" name="text" rows="4" cols="50"></textarea><br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('sentimentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the input text from the textarea
+            var inputText = document.getElementById('textInput').value;
+
+            // Make a POST request to the Flask endpoint
+            fetch('http://localhost:5000/sentiment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display the sentiment analysis result
+                var resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = `
+                    <h2>Result:</h2>
+                    <p>Input Text: ${data.input_text}</p>
+                    <p>Sentiment: ${data.sentiment}</p>
+                    <p>Confidence Score: ${data.confidence_score}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+
