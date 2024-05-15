@@ -37,6 +37,7 @@ bash
 
 /transformers.sh
 
+
 Start the Flask server:
 
 bash
@@ -45,13 +46,13 @@ bash
 
 ## Usage
 
-    Open your web browser and go to http://localhost:5000 to access the web application.
+   Open your web browser and go to http://localhost:5000 to access the web application.
     Enter text in the input field and click "Analyze Sentiment" to see the sentiment analysis result.
     The result will display the input text, sentiment label (positive/negative/neutral), and confidence score.
 
 ## Technologies
 
-    Flask: Web framework for the backend server.
+   Flask: Web framework for the backend server.
     Hugging Face Transformers: Library for utilizing pre-trained NLP models.
     HTML/CSS/JavaScript: Frontend interface for user interaction.
     Docker (optional): Containerization for deployment.
@@ -60,7 +61,7 @@ bash
 
 Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-    Fork the repository.
+   Fork the repository.
     Create a new branch (git checkout -b feature/your-feature-name).
     Commit your changes (git commit -am 'Add new feature').
     Push to the branch (git push origin feature/your-feature-name).
